@@ -3,79 +3,102 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Hospedaje en Mecatán | Casa y cuartos de renta</title>
-<meta name="description" content="Casa familiar con alberca en Mecatán, Nayarit. Reserva directamente por WhatsApp.">
+<meta name="description" content="Casa familiar con alberca en Mecatán, Nayarit. Reserva directamente por WhatsApp. Espacio privado, naturaleza, tranquilidad">
 <meta content="Casa Mecatán · Nayarit" property="og:title">
 <meta content="#1a3a2a" name="theme-color">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <style>
 :root {
-  --forest: #1a3a2a; --leaf: #3d7a56; --gold: #c9a44a; --sand: #f5efe6; --white: #fdfaf6; --ink: #1c2a22;
+  --forest: #1a3a2a; --leaf: #3d7a56; --sage: #7aab8a; --mist: #c8ddd0; --sand: #f5efe6; --gold: #c9a44a; --gold2: #e8c46a; --ink: #1c2a22; --white: #fdfaf6;
   --serif: 'Fraunces', Georgia, serif; --body: 'DM Sans', sans-serif;
 }
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--white); color: var(--ink); font-family: var(--body); line-height: 1.6; }
-nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; background: rgba(26,58,42,0.95); backdrop-filter: blur(10px); color: white; }
-.nav-logo { font-family: var(--serif); font-size: 20px; }
-.nav-logo span { color: var(--gold); }
-#hero { height: 70svh; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('portada.jpg') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
-.section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
-.card-img { height: 280px; border-radius: 15px; background-size: cover; background-position: center; border: 1px solid rgba(0,0,0,0.05); }
-.wa-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: #25D366; color: white; padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 10px; min-width: 280px; transition: transform 0.2s; }
-.wa-btn:hover { transform: scale(1.05); }
-.wa-secondary { background: #555; }
-.floating-wa { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-decoration: none; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { background: var(--white); color: var(--ink); font-family: var(--body); line-height: 1.7; }
+
+/* NAV */
+nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; background: rgba(26,58,42,.96); backdrop-filter: blur(12px); color: white; }
+.nav-logo { font-family: var(--serif); font-size: 22px; }
+.nav-logo span { color: var(--gold2); font-style: italic; }
+.nav-links a { color: white; text-decoration: none; margin-left: 25px; font-size: 13px; text-transform: uppercase; letter-spacing: .1em; }
+
+/* HERO */
+#hero { height: 80svh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: white; background: linear-gradient(rgba(26,58,42,.5), rgba(26,58,42,.5)), url('portada.jpg') center/cover; }
+.hero-title { font-family: var(--serif); font-size: clamp(40px, 8vw, 90px); line-height: 1; }
+.hero-title em { color: var(--gold2); font-style: italic; display: block; }
+
+/* GRID DE FOTOS OPTIMIZADO */
+.section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; text-align: center; }
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 40px; }
+.photo-card { height: 300px; border-radius: 12px; background-size: cover; background-position: center; border: 1px solid rgba(0,0,0,0.1); }
+
+/* BOTONES WHATSAPP IGUALES */
+.wa-container { display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 40px; }
+.wa-btn { 
+  display: inline-flex; align-items: center; justify-content: center; gap: 15px;
+  width: 100%; max-width: 350px; /* Esto los hace iguales */
+  padding: 20px; border-radius: 50px; color: white; font-weight: 600; text-decoration: none; font-size: 17px;
+  transition: transform 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.wa-btn.primary { background: #25D366; }
+.wa-btn.secondary { background: #555; }
+.wa-btn:hover { transform: translateY(-3px); }
+
+/* FLOTANTE */
+.wa-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-decoration: none; }
+
+footer { background: var(--ink); color: white; padding: 40px; text-align: center; font-size: 14px; }
 </style>
 </head>
 <body>
 
 <nav>
-<div class="nav-logo">Casa <span>Mecatán</span></div>
-<div>
-    <a href="#fotos" style="color:white; margin-right:20px; text-decoration:none; font-size:14px;">FOTOS</a>
-    <a href="#reserva" style="color:var(--gold); font-weight:600; text-decoration:none;">RESERVAR</a>
-</div>
+    <div class="nav-logo">Casa <span>Mecatán</span></div>
+    <div class="nav-links">
+        <a href="#fotos">Fotos</a>
+        <a href="#reserva">Reservar</a>
+    </div>
 </nav>
 
 <section id="hero">
-    <div>
-        <h1 style="font-family:var(--serif); font-size: clamp(2.5rem, 8vw, 4.5rem);">Bienvenidos</h1>
-        <p style="font-size: 1.2rem; opacity: 0.9;">Tu escapada perfecta en Nayarit</p>
+    <div class="hero-content">
+        <h1 class="hero-title">Casa <em>Mecatán</em></h1>
+        <p>Naturaleza y descanso en Nayarit</p>
     </div>
 </section>
 
 <section class="section" id="fotos">
-    <h2 style="font-family:var(--serif); font-size: 2.5rem; color: var(--forest);">Nuestra Galería</h2>
-    <div class="grid">
-        <div class="card-img" style="background-image: url('pool.jpg');"></div>
-        <div class="card-img" style="background-image: url('pool1.jpeg');"></div>
-        <div class="card-img" style="background-image: url('jardin.jpeg');"></div>
-        <div class="card-img" style="background-image: url('sala.jpg');"></div>
-        <div class="card-img" style="background-image: url('room1.jpg');"></div>
-        <div class="card-img" style="background-image: url('portada.jpg');"></div>
+    <h2 style="font-family: var(--serif); font-size: 2.5rem;">Nuestra Galería</h2>
+    <div class="photo-grid">
+        <div class="photo-card" style="background-image: url('pool.jpg');"></div>
+        <div class="photo-card" style="background-image: url('pool1.jpeg');"></div>
+        <div class="photo-card" style="background-image: url('jardin.jpeg');"></div>
+        <div class="photo-card" style="background-image: url('sala.jpg');"></div>
+        <div class="photo-card" style="background-image: url('room1.jpg');"></div>
+        <div class="photo-card" style="background-image: url('portada.jpg');"></div>
     </div>
 </section>
 
 <section class="section" id="reserva" style="background: var(--sand);">
-    <h2 style="font-family:var(--serif); font-size: 2.5rem;">Reserva tu estancia</h2>
-    <p style="margin-bottom:30px; font-size: 1.1rem;">Escríbenos por WhatsApp y te confirmamos disponibilidad en minutos:</p>
-    <div style="display: flex; flex-direction: column; align-items: center;">
-        <a class="wa-btn" href="https://wa.me/523331771903?text=Hola%2C%20me%20gustaria%20reservar">
-            <span>Reserva Principal (333 177 1903)</span>
+    <h2 style="font-family: var(--serif); font-size: 2.5rem;">Reserva tu estancia</h2>
+    <p>Contacta con nosotros por cualquiera de nuestras líneas oficiales:</p>
+    
+    <div class="wa-container">
+        <a href="https://wa.me/523271080200?text=Hola%2C%20me%20gustaria%20reservar" class="wa-btn primary">
+            <span>WhatsApp Principal (327)</span>
         </a>
-        <a class="wa-btn wa-secondary" href="https://wa.me/523271080200?text=Hola%2C%20me%20gustaria%20pedir%20informes">
-            <span>Contacto Auxiliar (327 108 0200)</span>
+        
+        <a href="https://wa.me/523331771903?text=Hola%2C%20vengo%20de%20la%20pagina%20web" class="wa-btn secondary">
+            <span>WhatsApp Secundario (333)</span>
         </a>
     </div>
 </section>
 
-<a href="https://wa.me/523271080200" class="floating-wa" target="_blank">💬</a>
+<a href="https://wa.me/523271080200" class="wa-float" target="_blank">💬</a>
 
-<footer style="padding: 40px; text-align: center; background: var(--forest); color: white;">
-    <p style="font-family: var(--serif); font-size: 1.2rem;">Casa Mecatán</p>
-    <p style="opacity: 0.7; font-size: 0.9rem; margin-top: 10px;">© 2026 Mecatán, Nayarit, México</p>
+<footer>
+    <p>© 2026 Casa Mecatán · Mecatán, Nayarit, México</p>
 </footer>
 
 </body>
